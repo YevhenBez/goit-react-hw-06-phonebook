@@ -2,7 +2,7 @@
 //  import { nanoid } from 'nanoid';
 import ContactForm from './contactForm/ContactForm';
 //  import ContactList from './contactList/ContactList';
-//  import Filter from './Filter/Filter';
+import Filter from './Filter/Filter';
 
  const App = () => {
   //  const [initialContacts] = useState([
@@ -76,8 +76,8 @@ import ContactForm from './contactForm/ContactForm';
          <h1>Phonebook</h1>
          <ContactForm  /> 
          <h2>Contacts</h2>
-         {/* <Filter value={filter} onChange={changeFilter} />
-         <ContactList
+         <Filter />
+         {/* <ContactList
            contacts={visibleContacts}
            onDeleteContact={deleteContact}
          /> */}

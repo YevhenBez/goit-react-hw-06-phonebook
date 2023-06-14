@@ -1,23 +1,60 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import css from './css/filter.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFilter } from '../../redux/selectors';
+import { setFilter } from '../../redux/filterSlice';
 
-function Filter({ value, onChange }) {
+
+
+function Filter() {
+  const filter = useSelector(getFilter);
+  console.log(`фильтр  ${filter}`)
+  const dispatch = useDispatch();
+
+  const changeFilter = event => {
+     dispatch(setFilter(event.currentTarget.value));
+   };
+
   return (
     <label>
       Find contacts by name
       <input
         className={css.inputFilterName}
         type="text"
-        value={value}
-        onChange={onChange}
+        value={filter.search}
+        onChange={changeFilter}
       />
     </label>
   );
 }
 
-Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
+// Filter.propTypes = {
+//   value: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+// };
 
 export default Filter;
+
+// import PropTypes from 'prop-types';
+// import css from './css/filter.module.css';
+
+// function Filter({ value, onChange }) {
+//   return (
+//     <label>
+//       Find contacts by name
+//       <input
+//         className={css.inputFilterName}
+//         type="text"
+//         value={value}
+//         onChange={onChange}
+//       />
+//     </label>
+//   );
+// }
+
+// Filter.propTypes = {
+//   value: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+// };
+
+// export default Filter;
