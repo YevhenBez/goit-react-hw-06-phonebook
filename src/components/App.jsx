@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from 'react';
 //  import { nanoid } from 'nanoid';
-//  import ContactForm from './contactForm/ContactForm';
+import ContactForm from './contactForm/ContactForm';
 //  import ContactList from './contactList/ContactList';
 //  import Filter from './Filter/Filter';
 
@@ -74,7 +74,7 @@
        {/* React homework template */}
        <div>
          <h1>Phonebook</h1>
-         {/* <ContactForm onSubmit={addContact} /> */}
+         <ContactForm  /> 
          <h2>Contacts</h2>
          {/* <Filter value={filter} onChange={changeFilter} />
          <ContactList
