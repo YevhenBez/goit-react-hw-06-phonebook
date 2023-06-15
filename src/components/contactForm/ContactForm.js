@@ -14,24 +14,25 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const addContact = (name, number) => {
-    dispatch(addContacts(name, number));
+    
   //    const contact = {
   //      id: nanoid(),
   //      name,
   //      number,
   //    };
 
-  //    if (
-  //      contacts.find(
-  //        contact => contact.name.toLowerCase() === name.toLowerCase()
-  //      )
-  //    ) {
-  //      alert(`${name} is already in contacts.`);
-  //    } else if (contacts.find(contact => contact.number === number)) {
-  //      alert(`${number} is already in contacts.`);
-  //    } else {
+      if (
+        contacts.find(
+          contact => contact.name.toLowerCase() === name.toLowerCase()
+        )
+      ) {
+        alert(`${name} is already in contacts.`);
+      } else if (contacts.find(contact => contact.number === number)) {
+        alert(`${number} is already in contacts.`);
+      } else {
+dispatch(addContacts(name, number));
   //      setContacts([contact, ...contacts]);
-  //    }
+      }
     };
 
   const handleChange = event => {
