@@ -7,8 +7,8 @@ function ContactListElement({ id, name, number }) {
   const dispatch = useDispatch();
 
   const deleteContact = contactId => {
-  dispatch(deleteContacts(contactId));
-    };
+    dispatch(deleteContacts(contactId));
+  };
 
   return (
     <li className={css.liContactList}>
@@ -33,7 +33,6 @@ ContactListElement.propTypes = {
 };
 
 export default ContactListElement;
-
 
 // import PropTypes from 'prop-types';
 // import css from './css/contactListElement.module.css';

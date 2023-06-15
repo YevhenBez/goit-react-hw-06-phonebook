@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { getContacts, getFilter } from '../../redux/selectors';
 
 const ContactList = () => {
-const contacts = useSelector(getContacts);
+  const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
 
   const getVisibleContacts = () => {
@@ -12,7 +12,7 @@ const contacts = useSelector(getContacts);
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
-  
+
   const visibleContacts = getVisibleContacts();
 
   return (

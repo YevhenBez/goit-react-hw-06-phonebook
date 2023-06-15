@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
 import css from './css/contactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from '../../redux/contactsSlice';
@@ -14,26 +13,18 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const addContact = (name, number) => {
-    
-  //    const contact = {
-  //      id: nanoid(),
-  //      name,
-  //      number,
-  //    };
-
-      if (
-        contacts.find(
-          contact => contact.name.toLowerCase() === name.toLowerCase()
-        )
-      ) {
-        alert(`${name} is already in contacts.`);
-      } else if (contacts.find(contact => contact.number === number)) {
-        alert(`${number} is already in contacts.`);
-      } else {
-dispatch(addContacts(name, number));
-  //      setContacts([contact, ...contacts]);
-      }
-    };
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
+      alert(`${name} is already in contacts.`);
+    } else if (contacts.find(contact => contact.number === number)) {
+      alert(`${number} is already in contacts.`);
+    } else {
+      dispatch(addContacts(name, number));
+    }
+  };
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -53,8 +44,6 @@ dispatch(addContacts(name, number));
     event.preventDefault();
 
     addContact(name, number);
-
-    // onSubmit(name, number);
 
     setName('');
     setNumber('');
@@ -94,10 +83,6 @@ dispatch(addContacts(name, number));
     </form>
   );
 };
-
-// ContactForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
 
 export default ContactForm;
 
@@ -172,4 +157,3 @@ export default ContactForm;
 // };
 
 // export default ContactForm;
-
