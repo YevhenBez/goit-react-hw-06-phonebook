@@ -8,7 +8,7 @@ import { setFilter } from '../../redux/filterSlice';
 
 function Filter() {
   const filter = useSelector(getFilter);
-  console.log(`фильтр  ${filter}`)
+  console.log(`фильтр  ${filter.search}`)
   const dispatch = useDispatch();
 
   const changeFilter = event => {
