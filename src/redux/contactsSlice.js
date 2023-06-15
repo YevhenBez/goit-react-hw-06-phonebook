@@ -28,8 +28,15 @@ export const contactsSlice = createSlice({
         };
       },
     },
+    deleteContacts(state, action) {
+      const index = state.arrayInitialContacts.findIndex(
+        contact => contact.id === action.payload
+      );
+
+      state.arrayInitialContacts.splice(index, 1);
+    },
   },
 });
 
-export const { addContacts } = contactsSlice.actions;
+export const { addContacts, deleteContacts } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;

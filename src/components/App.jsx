@@ -1,7 +1,7 @@
 // import React, { useState, useEffect } from 'react';
 //  import { nanoid } from 'nanoid';
 import ContactForm from './contactForm/ContactForm';
-//  import ContactList from './contactList/ContactList';
+import ContactList from './contactList/ContactList';
 import Filter from './Filter/Filter';
 
  const App = () => {
@@ -77,10 +77,7 @@ import Filter from './Filter/Filter';
          <ContactForm  /> 
          <h2>Contacts</h2>
          <Filter />
-         {/* <ContactList
-           contacts={visibleContacts}
-           onDeleteContact={deleteContact}
-         /> */}
+         <ContactList/> 
        </div>
      </div>
    );
